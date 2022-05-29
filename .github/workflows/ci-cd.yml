@@ -19,5 +19,5 @@ jobs:
       - run: echo 'Deploy Stage'
       - run: sudo apt-get update -qy
       - run: sudo apt-get install -y ruby-dev
-      - run: sudo gem intsall dpl
+      - run: sudo gem install dpl
       - run: sudo dpl --provider=heroku --app=${{secrets.HEROKU_APP}} --api-key=${{secrets.HEROKU_API_KEY}}
