@@ -1,5 +1,5 @@
 name: CI/CD
-on: [push]
+on: [push, pull_request]
 jobs:
   Build:
     runs-on: ubuntu-latest
@@ -17,9 +17,11 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
   Test:
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/dev'
     steps:
     - run: echo 'Test Stage'
   Deploy:
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
     steps:
       - run: echo 'Deploy Stage'
