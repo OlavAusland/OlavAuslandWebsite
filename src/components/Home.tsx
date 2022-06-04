@@ -27,6 +27,7 @@ export default function Home(){
             <div onClick={() => {window.location.href=repo.html_url}} className='card shadow' key={index}>
               <h2 style={{flex:1}}>{repo.name}</h2>
               <p style={{flex:3}}>{repo.description}</p>
+              <p>{user.login}</p>
             </div>
           ))}
         </div>
