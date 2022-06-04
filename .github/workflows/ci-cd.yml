@@ -11,7 +11,11 @@ jobs:
     needs: Build
     if: github.ref == 'refs/heads/dev'
     steps:
-      - run: echo '  Stage'
+      - uses: actions/checkout@v2
+      - name: Install Modules
+        run: yarn
+      - name: Run Tests
+        run: yarn test 
   Deploy:
     runs-on: ubuntu-latest
     needs: Build
