@@ -1,44 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import '../styles/app.css';
-import { getRepos, getUser } from '../api/githubAPI';
-import { GithubUser, Repository } from '../domain/Github';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import Home from './Home';
+import NavBar from './NavBar';
+import About from './About';
 
-function App(){
-  const [user, setUser] = useState<GithubUser>({} as GithubUser);
-  const [repos, setRepos] = useState<Repository[]>([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const user = await getUser();
-      const repos = await getRepos();
-      console.log(user)
-      setUser(user);
-      setRepos(repos);
-      console.log(repos)
-    }
-    fetchData()
-  }, []);
-
+function App() {
   return (
-    <div className='container'>
-      <header className='header shadow'>
-        <h1 style={{justifySelf:'flex-start'}}>Olav Ausland Onstad</h1>
-        <div>
-          <button>Contact</button>
-          <button>About</button>
-        </div>
-      </header>
-      <div className='content'>
-        <div className='card-container'>
-          {repos.map((repo, index) => (
-            <div className='card shadow' key={index}>
-              <h2 style={{flex:1}}>{repo.name}</h2>
-              <p style={{flex:3}}>{repo.description}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
+    <Router>
+      <NavBar/>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/about" element={<About/>}/>
+      </Routes>
+    </Router>
   );
 }
 
