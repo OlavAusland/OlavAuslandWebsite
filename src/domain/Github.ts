@@ -5,6 +5,9 @@ export type GithubUser = {
     bio: string;
     location: string;
     email: string;
+    public_repos: number;
+    followers: number;
+    following: number;
 }
 
 export type Repository = {
