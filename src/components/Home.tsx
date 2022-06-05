@@ -49,29 +49,28 @@ export default function Home(){
           </div>
         </div>
       </div>
-      <div style={{flex:1}}>
       <div className='repositories shadow'>
         <h1>Repositories</h1>
         <hr style={{borderBottomWidth:'1px', width:'100%'}}/>
-          <div className='card-container'>
-            {repos.map((repo: Repository) => (
-                <div onClick={() => {window.location.href=repo.html_url}} className='card shadow' key={repo.id}>
-                  <div style={{flex:1}}>
-                    <h1 style={{fontSize:'1vw'}}>{repo.name}</h1>
-                  </div>
-                  <div style={{flex:3}}>
-                    <p>{repo.description}</p>
-                  </div>
-                  <div className='stargazers'>
-                    <p>⭐{repo.stargazers_count}</p>
-                    <p>👁️{repo.watchers_count}</p>
-                    <p>🍴{repo.forks_count}</p>
-                  </div>
+        <div className='card-container'>
+          {repos.map((repo: Repository) => (
+              <div onClick={() => {window.location.href=repo.html_url}} className='card shadow' key={repo.id}>
+                <div style={{flex:1}}>
+                  <h1 style={{fontSize:'1vw'}}>{repo.name}</h1>
                 </div>
-              ))}
-          </div>
+                <div style={{flex:3}}>
+                  <p>{repo.description}</p>
+                </div>
+                <div className='stargazers'>
+                  <p>⭐{repo.stargazers_count}</p>
+                  <p>👁️{repo.watchers_count}</p>
+                  <p>🍴{repo.forks_count}</p>
+                </div>
+              </div>
+            ))}
         </div>
       </div>
+      <div style={{flex:1}}/>
     </div>
   );
 }
