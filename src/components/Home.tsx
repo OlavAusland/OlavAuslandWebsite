@@ -1,21 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/home.css';
+import '../styles/loader.css'
 import { getRepos, getUser } from '../api/githubAPI';
 import { GithubUser, Repository } from '../domain/Github';
 
 export default function Home(){
   const [user, setUser] = useState<GithubUser>({} as GithubUser);
   const [repos, setRepos] = useState<Repository[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const fetchData = async () => {
-      const user = await getUser();
-      const repos = await getRepos();
-      setUser(user);
-      setRepos(repos);
+      await getUser().then((user) => {setUser(user);});
+      await getRepos().then((repos) => {setRepos(repos);});
     }
     fetchData()
   }, []);
+
+  setTimeout(() => {
+    setLoading(false);
+  }, 1000);
+
+
+  if(loading){return (<div className='pong-loader'><br/></div>);}
 
   return (
     <div className='container'>
