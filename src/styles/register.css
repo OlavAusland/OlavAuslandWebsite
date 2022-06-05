@@ -1,0 +1,43 @@
+.register-container {
+    display: flex;
+    flex:1;
+    flex-direction: column;
+    height: 100vh;
+    width: 75%;
+    margin: 0 auto;
+    justify-content: center;
+    justify-self: center;
+}
+
+.register-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: 50%;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: #222;
+    overflow: hidden;
+    color:#f44336;
+}
+
+.register-input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0px 0px 15px 0px;
+    color:white;
+}
+
+.register-input-container > input {
+    border:none;
+    border-bottom: 1px white solid;
+    background-color: #222;
+    color:white;
+}
+
+.register-input-container > input:focus {outline: none;}

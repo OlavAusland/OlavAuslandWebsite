@@ -1,0 +1,43 @@
+.login-container {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    height: 100vh;
+    width: 600px;
+    margin: 0 auto;
+    justify-content: center;
+    justify-self: center;
+}
+.login-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: 50%;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: #222;
+    overflow: hidden;
+    color:#f44336;
+}
+
+.login-input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0px 0px 15px 0px;
+    color:white;
+}
+
+
+.login-input-container > input {
+    border:none;
+    border-bottom: 1px white solid;
+    background-color: #222;
+    color:white;
+}
+
+.login-input-container > input:focus {outline: none;}

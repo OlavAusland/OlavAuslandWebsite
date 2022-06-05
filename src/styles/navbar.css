@@ -23,13 +23,10 @@
   margin-left: 10px;
   cursor: pointer;
   font-size: 15pt;
-}
-
-
-button {
   display: inline-block;
   position: relative;
 }
+
 
 button:after {
   content: '';

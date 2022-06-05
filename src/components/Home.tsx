@@ -27,19 +27,26 @@ export default function Home(){
   return (
     <div className='container'>
       <div className='content shadow'>
-        <img src={user.avatar_url} style={{borderRadius:'10px'}} alt='Avatar'/>
+        <img src={user.avatar_url} style={{borderRadius:'10px', flex:1}} alt='Avatar'/>
         <div style={{marginLeft:25}}>
           <h1>{user.login}</h1>
           <p>{user.bio}</p>
           <hr style={{borderBottomWidth:'1px', width:'100%'}}/>
           <h3>Github Info:</h3>  
-          <div>
+          <div style={{flex:1}}>
             <p>Followers: {user.followers}</p>
             <p>Following: {user.following}</p>
             <p>Public Repos: {user.public_repos}</p>
           </div>
-          
-          <h3>Location:</h3>{user.location}
+          <h3>Socials</h3>
+          <div className='socials'>
+            <img onClick={() => {window.location.href='https://www.linkedin.com/in/olav-ausland-onstad-927193195'}} alt='linkedIn'
+              src={require('../assets/images/Facebook_Icon.png')}/>
+            <img onClick={() => {window.location.href='https://www.facebook.com/olav.auslandonstad'}} alt='facebook' 
+              src={require('../assets/images/LinkedIn_Icon.png')}/>
+            <img onClick={() => {window.location.href='https://github.com/OlavAusland'}} alt='github'
+              src={require('../assets/images/Github_Icon.png')}/>
+          </div>
         </div>
       </div>
       <div style={{flex:1}}>
