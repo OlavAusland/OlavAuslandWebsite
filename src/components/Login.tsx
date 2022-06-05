@@ -19,8 +19,10 @@ export default function Login(){
                         <label>Password</label>
                         <input type='password'/>
                     </div>
-                    <button onClick={() => {navigate('/login')}}>Back</button>
-                    <button onClick={() => {navigate('/register')}}>Create Account</button>
+                    <div>
+                        <button className='login-button' onClick={() => {navigate('/login')}}>Login</button>
+                        <button className='login-button' onClick={() => {navigate('/register')}}>Create Account</button>
+                    </div>
                 </form>
             </div>
         </div>

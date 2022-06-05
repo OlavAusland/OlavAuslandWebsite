@@ -8,10 +8,9 @@ export default function Register(){
 
     return (
         <div className='register-container'>
-            <div className='register-card shadow'>
+            <div className='register-card'>
                 <form>
                     <h1>Register</h1>
-                    <hr style={{borderBottomWidth:'1px', width:'100%'}}/>
                     <div className='register-input-container'>
                         <label>Username</label>
                         <input type='text'/>
@@ -28,8 +27,8 @@ export default function Register(){
                         <label>Email</label>
                         <input type='email'/>
                     </div>
-                    <button onClick={() => {navigate('/login')}}>Back</button>
-                    <button onClick={() => {navigate('/register')}}>Sign Up</button>
+                    <button className='register-button' onClick={() => {navigate('/login')}}>Back</button>
+                    <button className='register-button' onClick={() => {navigate('/register')}}>Sign Up</button>
                 </form>
             </div>
         </div>
