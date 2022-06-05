@@ -2,6 +2,7 @@ body {
   display:flex;
   height:100vh;
   min-width: 100%;
+  animation: fadeIn 2s;
 }
 
 #root {
