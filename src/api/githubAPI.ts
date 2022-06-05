@@ -14,6 +14,7 @@ export const getRepos = () => {
         .then(response => response.json())
         .then(json => {
             const repos = json as Repository[];
+            repos.sort((a, b) => b.stargazers_count - a.stargazers_count);
             return repos;
         });
 }

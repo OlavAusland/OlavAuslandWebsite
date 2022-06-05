@@ -50,10 +50,15 @@ export default function Home(){
             {repos.map((repo: Repository) => (
                 <div onClick={() => {window.location.href=repo.html_url}} className='card shadow' key={repo.id}>
                   <div style={{flex:1}}>
-                    <h1>{repo.name}</h1>
+                    <h1 style={{fontSize:'1vw'}}>{repo.name}</h1>
                   </div>
-                  <div style={{flex:4}}>
+                  <div style={{flex:3}}>
                     <p>{repo.description}</p>
+                  </div>
+                  <div className='stargazers'>
+                    <p>⭐{repo.stargazers_count}</p>
+                    <p>👁️{repo.watchers_count}</p>
+                    <p>🍴{repo.forks_count}</p>
                   </div>
                 </div>
               ))}
