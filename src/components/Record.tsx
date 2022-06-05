@@ -1,7 +1,11 @@
+import '../styles/record.css'
+
 export default function Record(){
     return (
         <div className='container'>
-            <h1>Record</h1>
+            <div className='recordContainer'>
+                <p>Record</p>
+            </div>
         </div>
     );
 }

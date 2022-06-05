@@ -84,6 +84,25 @@ body {
   margin-top: 25px;
 }
 
+.socials {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex:1;
+  flex-direction: row;
+}
+
+.socials > img {
+  cursor: pointer;
+  width:50px;
+  height:50px;
+}
+
+.socials > img:hover{
+  transform:translateY(-10px);
+  animation: ease-in 0.2s forwards 1;
+}
 
 ::-webkit-scrollbar {
   width: 0px;
