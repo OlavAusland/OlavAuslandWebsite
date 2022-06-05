@@ -13,13 +13,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 600px;
+    width: 25%;
     height: 50%;
     margin: 0 auto;
     border-radius: 10px;
     background-color: #222;
     overflow: hidden;
     color:#f44336;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,1);
 }
 
 .register-input-container {
@@ -35,9 +36,25 @@
 
 .register-input-container > input {
     border:none;
+    font-size: 20px;
     border-bottom: 1px white solid;
     background-color: #222;
     color:white;
 }
 
 .register-input-container > input:focus {outline: none;}
+
+
+.register-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: #f44336;
+    color:white;
+    font-size: 20px;
+    cursor: pointer;
+}
