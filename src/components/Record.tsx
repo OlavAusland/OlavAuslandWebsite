@@ -2,9 +2,9 @@ import '../styles/record.css'
 
 export default function Record(){
     return (
-        <div className='container'>
-            <div className='recordContainer'>
-                <p>Record</p>
+        <div className='record-container'>
+            <div className='record-card-container'>
+
             </div>
         </div>
     );

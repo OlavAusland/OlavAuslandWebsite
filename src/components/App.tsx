@@ -6,6 +6,7 @@ import About from './About';
 import Record from './Record';
 import Register from './Register';
 import Login from './Login';
+import NoRoute from './error/NoRoute';
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
         <Route path="/about" element={<About/>}/>
         <Route path="/record" element={<Record/>}/>
         <Route path="/login" element={<Login/>}/>
-        <Route path="/register" element={<Register/>}/>
+        <Route path="*" element={<NoRoute/>}/>
+        {/*<Route path="/register" element={<Register/>}/>*/}
       </Routes>
     </Router>
   );
