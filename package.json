@@ -10,6 +10,7 @@
     "@types/node": "^16.7.13",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
+    "firebase": "^9.8.2",
     "jest": "^28.1.0",
     "node-sass": "^7.0.1",
     "react": "^18.1.0",

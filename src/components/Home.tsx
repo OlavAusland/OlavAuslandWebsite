@@ -27,7 +27,7 @@ export default function Home(){
   return (
     <div className='container'>
       <div className='content shadow'>
-        <img src={user.avatar_url} style={{borderRadius:'10px', flex:1}} alt='Avatar'/>
+        <img src={user.avatar_url} style={{borderRadius:'10px 0px 0px 10px'}} height='100%' alt='Avatar'/>
         <div style={{marginLeft:25}}>
           <h1>{user.login}</h1>
           <p>{user.bio}</p>
@@ -40,9 +40,9 @@ export default function Home(){
           </div>
           <h3>Socials</h3>
           <div className='socials'>
-            <img onClick={() => {window.location.href='https://www.linkedin.com/in/olav-ausland-onstad-927193195'}} alt='linkedIn'
-              src={require('../assets/images/Facebook_Icon.png')}/>
             <img onClick={() => {window.location.href='https://www.facebook.com/olav.auslandonstad'}} alt='facebook' 
+              src={require('../assets/images/Facebook_Icon.png')}/>
+            <img onClick={() => {window.location.href='https://www.linkedin.com/in/olav-ausland-onstad-927193195'}} alt='linkedIn'
               src={require('../assets/images/LinkedIn_Icon.png')}/>
             <img onClick={() => {window.location.href='https://github.com/OlavAusland'}} alt='github'
               src={require('../assets/images/Github_Icon.png')}/>
