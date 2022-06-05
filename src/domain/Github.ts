@@ -16,4 +16,8 @@ export type Repository = {
     html_url: string;
     private: boolean;
     description: string;
+    stargazers_count: number;
+    language: string;
+    watchers_count: number;
+    forks_count: number;
 }
