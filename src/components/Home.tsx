@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/home.css';
-import '../styles/loader.css'
+import '../styles/loaders/pong-loader.css'
 import { getRepos, getUser } from '../api/githubAPI';
 import { GithubUser, Repository } from '../domain/Github';
 
