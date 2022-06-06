@@ -1,10 +1,8 @@
-import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Home from './Home';
 import NavBar from './NavBar';
 import About from './About';
 import Record from './Record';
-import Register from './Register';
 import Login from './Login';
 import NoRoute from './error/NoRoute';
 
