@@ -5,6 +5,7 @@ import { addRecord, getRecords } from '../api/firebaseAPI';
 import '../styles/record.css'
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
+import '../styles/loaders/cube-loader.css'
 
 
 export default function Record(){
@@ -13,6 +14,7 @@ export default function Record(){
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
     const [record, setRecord] = useState<RecordType>({} as RecordType)
     const [records, setRecords] = useState<RecordType[]>([]);
+    const [loading, setLoading] = useState<boolean>(true);
 
     const handleSubmit = async(event: React.SyntheticEvent) => {
         event.preventDefault();
@@ -27,10 +29,22 @@ export default function Record(){
         const fetchRecords = async() => {
             getRecords().then((res) => {
                 setRecords(res);
+                setLoading(false);
             }).catch((err) => {console.log(err)});
         }
         fetchRecords();
     }, []);
+
+    if(loading){
+        return (
+            <div className='record-container'>
+                <div className='cube'>
+                    <div/><div/><div/>
+                    <div/><div/><div/>
+                </div>
+            </div>
+        );
+    }
     
     if(isModalOpen) {
         return(
