@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import Home from './Home';
-import NavBar from './NavBar';
 import About from './About';
 import Record from './Records';
 import Login from './Login';

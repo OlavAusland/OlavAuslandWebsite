@@ -54,6 +54,7 @@ export default function Record(){
                     <hr style={{borderBottomWidth:1, width:'90%'}}/>
                     <div style={{display:'flex', flexDirection:'row', width:'100%', justifyContent:'center'}}>
                         <h1>Title:</h1><input type='title' name='title'/>
+                        <input type={'file'} multiple/>
                     </div>
                     <textarea onChange={(event) => {setRecord(prev => ({...prev, body:event.target.value}))}}/>
                     <div style={{display:'flex', flexDirection:'row', width:'90%'}}>
