@@ -1,5 +1,5 @@
 import { Route, Routes, useLocation } from 'react-router-dom'
-import { TransitionGroup, CSSTransition } from 'react-transition-group'
+//import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import Home from './Home';
 import About from './About';
 import Record from './Records';
