@@ -31,14 +31,10 @@
 }
 
 .record-card:hover {
-    min-height: 200px;
+    height: 400px;
     transform: scale(1.02);
-}
-
-.record-card.expand { 
-    height: auto;
-    min-height:200px;
     overflow-y: scroll;
+    transition: ease-in .3s all;
 }
 
 .record-button {
