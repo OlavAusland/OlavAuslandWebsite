@@ -89,9 +89,9 @@ export default function Record(){
                 ))}
             </div>
             <div>
-                <button onClick={() => {if(page > 1){setPage(prev => (prev -1))}}} style={{margin:0, padding:0}}>⬅️</button>
-                {Array.from(Array(Math.ceil(records.length/numRecords)).keys()).slice(page, page + 5).map((i) => (<button onClick={() => {setPage(i)}}>{i}</button>))}
-                <button onClick={() => {if(page < Math.ceil(records.length/numRecords) - 1){setPage(prev => (prev +1))}}} style={{margin:0, padding:0}}>➡️</button>
+                <button onClick={() => {if(page > 1){setPage(prev => (prev -1))}}} className='record-navigate-button'>⬅️</button>
+                {Array.from(Array(Math.ceil(records.length/numRecords)).keys()).slice(page-1, page + 5).map((i) => (<button onClick={() => {setPage(i)}} className='record-navigate-button'>{i+1}</button>))}
+                <button onClick={() => {if(page < Math.ceil(records.length/numRecords) - 1){setPage(prev => (prev +1))}}} className='record-navigate-button'>➡️</button>
             </div>
         </div>
     );
