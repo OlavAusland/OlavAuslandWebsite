@@ -61,6 +61,7 @@ body {
   margin: 10px;
   overflow: hidden;
   cursor: pointer;
+  transition: ease-out .2s all;
 }
 
 .card > div {
@@ -78,6 +79,7 @@ body {
 
 .card:hover {
   background-color: rgba(0,0,0,0.1);
+  transition: ease-in .2s all;
 }
 
 .content {

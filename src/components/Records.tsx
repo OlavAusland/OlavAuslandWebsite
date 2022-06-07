@@ -2,13 +2,16 @@ import { useEffect, useState } from 'react';
 import { auth } from '../firebase-config';
 import { RecordType } from '../domain/Record';
 import { addRecord, getRecords } from '../api/firebaseAPI';
-import '../styles/record.css'
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 import '../styles/loaders/cube-loader.css'
+import '../styles/records.css'
+import { useNavigate } from 'react-router-dom';
 
 
 export default function Record(){
+    const navigate = useNavigate();
+
     const numRecords = 4;
     const [page, setPage] = useState<number>(1);
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -78,7 +81,7 @@ export default function Record(){
             }
             <div className='record-card-container'>
                 {records.slice(numRecords*(page-1), numRecords*page+numRecords).map((record: RecordType, i: number) => (
-                    <div className='record-card shadow' key={i}>
+                    <div className='record-card shadow' onClick={() => {navigate(`/record/${record.id}`)}} key={i}>
                         <h1>{record.title}</h1>
                         <hr style={{borderBottomWidth:'1px', width:'90%'}}/>
                         <ReactMarkdown rehypePlugins={[rehypeRaw]}>{record.body}</ReactMarkdown>
