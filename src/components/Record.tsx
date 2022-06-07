@@ -9,7 +9,7 @@ import '../styles/loaders/cube-loader.css'
 
 
 export default function Record(){
-    const numRecords = 5;
+    const numRecords = 4;
     const [page, setPage] = useState<number>(1);
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
     const [record, setRecord] = useState<RecordType>({} as RecordType)
