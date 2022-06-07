@@ -12,7 +12,7 @@ import { useNavigate } from 'react-router-dom';
 export default function Record(){
     const navigate = useNavigate();
 
-    const numRecords = 4;
+    const numRecords = 2;
     const [page, setPage] = useState<number>(1);
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
     const [record, setRecord] = useState<RecordType>({} as RecordType)
@@ -22,7 +22,7 @@ export default function Record(){
     const handleSubmit = async(event: React.SyntheticEvent) => {
         event.preventDefault();
         const target = event.target as typeof event.target & {title: {value: string}};
-        record.createdAt = Date.now().toLocaleString();
+        record.createdAt = Date.now().toString();
         record.title = target.title.value;
         await addRecord(record).then((res) => {console.log('Successfully added record')}).catch((err) => {console.log(err)});
         setIsModalOpen(false);
@@ -83,6 +83,7 @@ export default function Record(){
                 {records.slice(numRecords*(page-1), numRecords*page+numRecords).map((record: RecordType, i: number) => (
                     <div className='record-card shadow' onClick={() => {navigate(`/record/${record.id}`)}} key={i}>
                         <h1>{record.title}</h1>
+                        <h4>{new Date(Number(record.createdAt)).toLocaleString()}</h4>
                         <hr style={{borderBottomWidth:'1px', width:'90%'}}/>
                         <ReactMarkdown rehypePlugins={[rehypeRaw]}>{record.body}</ReactMarkdown>
                     </div>
@@ -90,7 +91,7 @@ export default function Record(){
             </div>
             <div>
                 <button onClick={() => {if(page > 1){setPage(prev => (prev -1))}}} className='record-navigate-button'>⬅️</button>
-                {Array.from(Array(Math.ceil(records.length/numRecords)).keys()).slice(page-1, page + 5).map((i) => (<button onClick={() => {setPage(i)}} className='record-navigate-button'>{i+1}</button>))}
+                {Array.from(Array(Math.ceil(records.length/numRecords)).keys()).slice(page, page + 5).map((i) => (<button onClick={() => {setPage(i)}} className='record-navigate-button'>{i}</button>))}
                 <button onClick={() => {if(page < Math.ceil(records.length/numRecords) - 1){setPage(prev => (prev +1))}}} className='record-navigate-button'>➡️</button>
             </div>
         </div>
